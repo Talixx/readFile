@@ -36,9 +36,10 @@ typedef struct {
 			fld[i].type = fgetc(meta);
 			fread(&fld[i].len,sizeof(int),1,meta);
 			i++;
+			printf("Name:%s \n Type: %c \n Len: %d \n ",fld[i].name,fld[i].type,fld[i].len);
 		}
 		i=0;
-		printf("Name:%s \n Type: %c \n Len: %d \n ",fld[i].name,fld[i].type,fld[i].len);
+
 
 		return 0;
 	}

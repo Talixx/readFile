@@ -31,20 +31,22 @@ int main(){
 			int j=0;
 			while((c=fgetc(meta))!='\0'){
 				fld[i].name[j++]=c;
+
 			}
-			fld[i].name[j++]=c;	
-			fld[i].type = fgetc(meta);
+
+			fld[i].name[j++]=c;
 			fread(&fld[i].type,sizeof(char),1,meta);
 			fread(&fld[i].len,sizeof(int),1,meta);
-			fread(&fld[i].keyType,sizeof(int),1,meta);
-			/*
-			fld[i].name[j++]=c;
+			fread(&fld[i].keyType,sizeof(char),1,meta);
+			fread(&fld[i].ob,sizeof(char),1,meta);
+			/*fld[i].name[j++]=c;
 			fld[i].type = fgetc(meta);
 			fread(&fld[i].len,sizeof(int),1,meta);
 			fld[i].keyType= fgetc(meta);
 			fld[i].ob = fgetc(meta);*/
+
+			printf("Name:%s \n Type: %c \n Len: %d \n keyType: %c \n ob: %d \n",fld[i].name,fld[i].type,fld[i].len,fld[i].keyType,fld[i].ob);
 			i++;
-			printf("Name:%s \n Type: %c \n Len: %d \n keyType: %c \n ob: %c \n",fld[i].name,fld[i].type,fld[i].len,fld[i].keyType,fld[i].ob);
 		}
 
 		i=0;

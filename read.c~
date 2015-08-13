@@ -11,7 +11,7 @@ typedef struct {
 	int nullcheck;
 }Field;
 
-	int readFileMeta(){
+	int main(){
 		FILE *meta;
 		char *arqmeta = "meta.dat";//Metadata file's name
 		int qt_fields, i=0;
